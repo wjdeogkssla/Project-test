@@ -1,0 +1,14 @@
+<script>
+
+var fileNames = ["fileName.jpg", "fileName.sh", "fileName.exe", ".c", "fileName", ".jpg"] ;
+
+//var regExpForbiddenFileExtension = /(exe|dll|sh|c|zip|alz|tar)$/i ;  //확장자로 끝나는 것
+var regExpForbiddenFileExtension = /((\.(exe|dll|sh|c|zip|alz|tar)$)|^[^.]+$|^\..{1,}$)/i ;    //+ 확장자가 없는 것 않됨
+
+for(var fileName of fileNames) {
+	console.log(fileName + ": " + regExpForbiddenFileExtension.test(fileName));
+}
+
+//var regExpForbiddenFileExtension = /((^(.+\.)(exe|dll|sh|c|zip|alz|tar)$)|(^(.+)$))/i ;
+
+</script>
